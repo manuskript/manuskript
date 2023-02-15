@@ -1,0 +1,46 @@
+<?php
+
+namespace __NAMESPACE__\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Manuskript\Manuskript;
+
+class ManuskriptServiceProvider extends ServiceProvider
+{
+    /**
+     * The resources that will be registered.
+     * 
+     * @var array
+     */
+    protected array $resources = [
+        // 'App\Manuskript\UserResource',
+    ];
+
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
+    {
+        $this->authorize();
+
+        $this->registerResources();
+    }
+
+    /**
+     * Authorize access to Manuskript.
+     */
+    protected function authorize(): void
+    {
+        Manuskript::auth(function ($request) {
+            // return $request->user()->isAdmin();
+        });
+    }
+
+    /**
+     * Register the resources.
+     */
+    public function registerResources()
+    {
+        Manuskript::register($this->resources);
+    }
+}
