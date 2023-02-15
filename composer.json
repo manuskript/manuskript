@@ -1,18 +1,42 @@
 {
     "name": "manuskript/manuskript",
-    "autoload": {
-        "psr-4": {
-            "Manuskript\\": "src/server/"
-        }
+    "description": "The Admin Panel for your laravel Application",
+    "keywords": [
+        "laravel",
+        "admin-panel"
+    ],
+    "license": "MIT",
+    "homepage": "https://manuskript.dev",
+    "support": {
+        "issues": "https://github.com/orgs/manuskript/discussions",
+        "source": "https://github.com/manuskript/manuskript"
     },
+    "authors": [
+        {
+            "name": "Tobias Thaden",
+            "email": "tobias@manuskript.dev"
+        }
+    ],
     "require": {
-        "php": "^8.1.0",
+        "php": "^8.1",
         "inertiajs/inertia-laravel": "^0.6.9",
-        "tightenco/ziggy": "^1.5"
+        "tightenco/ziggy": "^1.6"
     },
     "require-dev": {
-        "laravel/pint": "^1.8",
-        "spatie/laravel-ignition": "^1.0"
+        "laravel/pint": "^1.10",
+        "spatie/laravel-ignition": "^2.1",
+        "orchestra/testbench": "^8.0",
+        "phpunit/phpunit": "^10.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Manuskript\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Manuskript\\Tests\\": "tests/"
+        }
     },
     "extra": {
         "laravel": {

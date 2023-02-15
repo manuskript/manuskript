@@ -1,9 +1,11 @@
-const typography = require("./src/client/TipTap/tailwind");
-
 module.exports = {
     theme: {
-        extend: {typography},
+        extend: {
+          fontWeight: {
+            'inherit': 'inherit',
+          }
+        }
     },
-    content: ["./src/client/**/*.{js,jsx}"],
+    content: ["./resources/js/**/*.{js,jsx}"],
     plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };
