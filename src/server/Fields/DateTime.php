@@ -33,6 +33,6 @@ class DateTime extends Field implements SortableField
             $value = Carbon::parse($value);
         }
 
-        return $value->format('Y-m-d\Th:i:s');
+        return $value->format('Y-m-d\TH:i:s');
     }
 }
