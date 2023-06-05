@@ -149,9 +149,24 @@ export default function ImageField({
     function updateFocalPoint(e) {
         // EXPERIMENTAL
         setFocalPoint([
-            (e.nativeEvent.layerX * 100) / e.target.width,
-            (e.nativeEvent.layerY * 100) / e.target.height,
+            Math.round((e.nativeEvent.layerX * 100) / e.target.width),
+            Math.round((e.nativeEvent.layerY * 100) / e.target.height),
         ]);
+    }
+
+    function handleSaveFocalpoint(e) {
+        e.preventDefault();
+
+        fetch("/api/focal-point", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                path: value,
+                focalPoint,
+            }),
+        }).then(response => console.log(response));
     }
 
     function reset() {
@@ -253,6 +268,7 @@ export default function ImageField({
                                     ></div>
                                 </div>
                             </div>
+                            <Button onClick={handleSaveFocalpoint}>Save Focalpoint</Button>
                             {!!state.file && (
                                 <ul className="flex space-x-3 text-sm text-slate-600">
                                     <li>{state.file.size} bytes</li>
