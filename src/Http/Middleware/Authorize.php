@@ -8,7 +8,7 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class Authorize
 {
-    public function handle($request, $next)
+    public function handle($request, $next): mixed
     {
         if (!Manuskript::check($request)) {
             throw new AccessDeniedHttpException();

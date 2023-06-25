@@ -13,7 +13,7 @@ trait InteractsWithResources
         $this->resetRegisteredResources();
     }
 
-    protected function resetRegisteredResources()
+    protected function resetRegisteredResources(): void
     {
         Manuskript::$resources = [];
     }
