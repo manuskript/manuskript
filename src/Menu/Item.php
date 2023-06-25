@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use JsonSerializable;
 use Manuskript\Contracts\Arrayable;
 use Manuskript\Facades\URL;
+use Manuskript\Support\Str;
 
 class Item implements Arrayable, JsonSerializable
 {
@@ -28,7 +29,7 @@ class Item implements Arrayable, JsonSerializable
     {
         $request = $request ?? Container::getInstance()->make(Request::class);
 
-        return $this->url() === $request->url();
+        return Str::startsWith($request->url(), $this->url());
     }
 
     public function toArray(): array
