@@ -2,8 +2,9 @@
 
 namespace Manuskript\Fields\Concerns;
 
-use Illuminate\Container\Container;
 use InvalidArgumentException;
+use Illuminate\Validation\Rule;
+use Illuminate\Container\Container;
 
 trait ValidationRules
 {
@@ -20,6 +21,15 @@ trait ValidationRules
         }
 
         return $this->setAttribute('required', $required);
+    }
+
+    public function addRules(Rule|string|array $rules): self
+    {
+        $this->rules = array_unique(array_merge(
+            $this->rules, is_array($rules) ? $rules : [$rules]
+        ));
+
+        return $this;
     }
 
     public function rules(array|callable $rules, bool $override = false): static
