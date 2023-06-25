@@ -4,8 +4,10 @@ import App from "~/App";
 import Card from "~/Components/Card";
 import ResourceFields from "~/Shared/ResourceFields";
 import {useFormFields} from "~/useFormFields";
+import Button from "~/Components/Button";
+import Layout from "~/Components/Layout";
 
-const Edit = ({data: resource, updateUrl, ...props}) => {
+const Edit = ({data: resource, updateUrl, errors, ...props}) => {
     const {data, setData, fields} = useFormFields(resource.fields ?? []);
 
     function handleSave() {
@@ -14,9 +16,11 @@ const Edit = ({data: resource, updateUrl, ...props}) => {
 
     return (
         <Fragment>
-            <button onClick={handleSave}>Save</button>
+            <Layout.Container>
+                <Button primary className="ml-auto" onClick={handleSave}>Save</Button>
+            </Layout.Container>
             <Card>
-                <ResourceFields fields={fields} onChange={setData} />
+                <ResourceFields fields={fields} errors={errors} onChange={setData} />
             </Card>
         </Fragment>
     );
