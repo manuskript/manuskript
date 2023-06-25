@@ -11,7 +11,7 @@ class Password extends Field
     use Sortable;
     use ModifiesValueBeforeSave;
 
-    protected string $type = 'text';
+    protected string $type = 'password';
 
     public static function make($label = 'Password', $name = null): static
     {
