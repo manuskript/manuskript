@@ -28,7 +28,7 @@ class Resource implements Arrayable, JsonSerializable
             ->hydrate($this->model);
     }
 
-    public function url()
+    public function url(): string
     {
         $route = 'resources.show';
 

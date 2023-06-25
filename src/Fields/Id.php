@@ -17,7 +17,7 @@ class Id extends Field
         return parent::make($label, $name);
     }
 
-    protected function booting()
+    protected function booting(): void
     {
         $this->showOnIndex(true);
     }

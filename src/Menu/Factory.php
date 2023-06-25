@@ -42,7 +42,10 @@ class Factory
             ));
         }, $items);
 
-        return tap(new Menu($label, $items), fn ($menu) => static::register($menu));
+        return tap(
+            new Menu($label, $items),
+            static fn ($menu) => static::register($menu)
+        );
     }
 
     public function makeItem(array|string $label, $url = null): Item

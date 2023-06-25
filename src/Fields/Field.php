@@ -61,14 +61,14 @@ abstract class Field implements Arrayable, JsonSerializable
         $this->hydrated($value);
     }
 
-    public function default($value): self
+    public function default($value): static
     {
         $this->default = $value;
 
         return $this;
     }
 
-    public function readOnly(bool|callable $boolean = true): self
+    public function readOnly(bool|callable $boolean = true): static
     {
         return $this->setAttribute('readOnly', $boolean);
     }
@@ -83,7 +83,7 @@ abstract class Field implements Arrayable, JsonSerializable
         return Arr::get($this->attributes, $key, $default);
     }
 
-    public function setAttribute($key, $value): self
+    public function setAttribute($key, $value): static
     {
 
         $value = is_callable($value)
@@ -114,12 +114,12 @@ abstract class Field implements Arrayable, JsonSerializable
         return $this->value;
     }
 
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function getLabel()
+    public function getLabel(): string
     {
         return $this->label;
     }
@@ -151,27 +151,27 @@ abstract class Field implements Arrayable, JsonSerializable
         }
     }
 
-    protected function booting()
+    protected function booting(): void
     {
         //
     }
 
-    protected function booted()
+    protected function booted(): void
     {
         //
     }
 
-    protected function hydrating($value)
+    protected function hydrating($value): void
     {
         //
     }
 
-    protected function hydrated($value)
+    protected function hydrated($value): void
     {
         //
     }
 
-    public function toColumn()
+    public function toColumn(): Column
     {
         return new Column($this);
     }
@@ -181,7 +181,7 @@ abstract class Field implements Arrayable, JsonSerializable
         return $this->value;
     }
 
-    public function toArray()
+    public function toArray(): array
     {
         return array_merge($this->attributes, [
             'label' => $this->label,

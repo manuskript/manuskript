@@ -1,6 +1,6 @@
 <?php
 
-namespace Manuskript\Tests;
+namespace Manuskript\Tests\Database;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Manuskript\Database\Collection;
@@ -8,6 +8,7 @@ use Manuskript\Database\Resource;
 use Manuskript\Manuskript;
 use Manuskript\Tests\stubs\Models\Foo;
 use Manuskript\Tests\stubs\Resources\FooResource;
+use Manuskript\Tests\TestCase;
 
 class BuilderTest extends TestCase
 {

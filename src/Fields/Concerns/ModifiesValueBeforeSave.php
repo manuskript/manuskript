@@ -8,7 +8,7 @@ trait ModifiesValueBeforeSave
 {
     protected static ?Closure $saveUsing;
 
-    public static function saveUsing(Closure $callback)
+    public static function saveUsing(Closure $callback): void
     {
         static::$saveUsing = $callback;
     }
