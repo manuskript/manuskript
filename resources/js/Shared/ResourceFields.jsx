@@ -1,10 +1,10 @@
 import Form, {Field, Label} from "~/Components/Form";
 import {Error} from "../Components/Form";
 
-export default function ResourceFields({fields = {}, errors = {}, onChange}) {
+export default function ResourceFields({fields = {}, errors = {}, onChange, readOnly: globalReadOnly = false}) {
     return (
         <Form>
-            {Object.entries(fields).map(([name, {label, required, ...props}]) => (
+            {Object.entries(fields).map(([name, {label, required, readOnly, ...props}]) => (
                 <Form.Section key={name}>
                     <div className="w-80">
                         <Label required={required} htmlFor={name}>
@@ -12,7 +12,7 @@ export default function ResourceFields({fields = {}, errors = {}, onChange}) {
                         </Label>
                     </div>
                     <div className="w-full">
-                        <Field id={name} required={required} onChange={value => onChange(name, value)} {...props} />
+                        <Field id={name} readOnly={readOnly ?? globalReadOnly} required={required} onChange={value => onChange(name, value)} {...props} />
                         {!!errors[name] && <Error>{errors[name]}</Error>}
                     </div>
                 </Form.Section>
