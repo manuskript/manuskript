@@ -3,6 +3,7 @@
 namespace Manuskript\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Manuskript\Database\Resource;
 use Manuskript\Http\RedirectResponse;
 use Manuskript\Http\Response;
@@ -74,12 +75,18 @@ class ResourcesController
     {
         $fields = $resource::fieldsByContext('edit');
 
+        $validator = Validator::make($request->all(), $fields->rules());
+
+        if ($validator->fails()) {
+            return RedirectResponse::back()->withErrors($validator);
+        }
         $attributes = $fields->hydrate(
-            $request->all()
+            $validator->validated()
         )->toModelAttributes();
 
         $resource::query()->update($model, $attributes);
 
-        return RedirectResponse::back();
+        return RedirectResponse::route('resources.show', [$resource::slug(), $model])
+            ->withMessage("{$resource::label()} updated.");
     }
 }

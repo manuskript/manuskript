@@ -106,14 +106,14 @@ class Resource
         ));
     }
 
-    public static function queryWithRelations($context)
+    public static function queryWithRelations($context): Builder
     {
         $relations = [];
 
         return static::query()->context($context)->with($relations);
     }
 
-    public static function query()
+    public static function query(): Builder
     {
         return new Builder(static::$model::query());
     }
