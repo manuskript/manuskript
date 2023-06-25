@@ -10,9 +10,13 @@ class HandleInertiaRequests extends Middleware
 {
     protected $rootView = 'manuskript::manuskript';
 
-    public function share(Request $request)
+    public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
+
+            'message' => function () use ($request) {
+                return $request->session()->get('message', null);
+            },
 
             'menus' => function () {
                 return Menu::registered();
