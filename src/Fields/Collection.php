@@ -2,6 +2,7 @@
 
 namespace Manuskript\Fields;
 
+use Closure;
 use Illuminate\Database\Eloquent\Model;
 use InvalidArgumentException;
 use Manuskript\Support\Collection as BaseCollection;
@@ -15,7 +16,22 @@ class Collection extends BaseCollection
 
     public function toModelAttributes(): array
     {
-        $attributes = [];
+        return $this->mapToNames(
+            static fn ($field) => $field->toModelAttribute()
+        );
+    }
+
+    public function rules(): array
+    {
+        return $this->mapToNames(
+            static fn ($field) => $field->getRules()
+        );
+    }
+
+
+    private function mapToNames(Closure $callback): array
+    {
+        $items = [];
 
         foreach($this->items as $field) {
             if(! $field instanceof Field) {
@@ -26,9 +42,9 @@ class Collection extends BaseCollection
                 ));
             }
 
-            $attributes[$field->getName()] = $field->toModelAttribute();
+            $items[$field->getName()] = $callback($field);
         }
 
-        return $attributes;
+        return $items;
     }
 }
