@@ -18,7 +18,7 @@ class Item implements Arrayable, JsonSerializable
     ) {
     }
 
-    public function url()
+    public function url(): string
     {
         $url = $this->url;
 

@@ -15,24 +15,24 @@ class Manuskript
 
     public static $authorize;
 
-    public static function version()
+    public static function version(): ?string
     {
         return InstalledVersions::getVersion('manuskript/manuskript');
     }
 
-    public static function can($scope, $resource)
+    public static function can($scope, $resource): bool
     {
         $method = Str::camel('can_' . $scope);
 
         return call_user_func([$resource, $method], Container::getInstance()->make(Request::class));
     }
 
-    public static function auth(callable $callback)
+    public static function auth(callable $callback): void
     {
         static::$authorize = $callback;
     }
 
-    public static function check($request)
+    public static function check($request): bool
     {
         return (static::$authorize ?: new Authorize())($request);
     }

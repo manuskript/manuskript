@@ -3,12 +3,14 @@
 namespace Manuskript\Routing;
 
 use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Config;
 use Manuskript\Manuskript;
+use Manuskript\Resource;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ResourceRouteBinding
 {
-    public function __invoke(string $handle, Route $route)
+    public function __invoke(string $handle, Route $route): string
     {
         if (!$this->isManuskript($route)) {
             return $handle;
@@ -21,13 +23,15 @@ class ResourceRouteBinding
         throw new NotFoundHttpException();
     }
 
-    protected function resolveResource(string $handle)
+    protected function resolveResource(string $handle): ?string
     {
-        return Manuskript::resolve(fn ($resource) => $resource::slug() === $handle);
+        return Manuskript::resolve(
+            static fn ($resource) => $resource::slug() === $handle
+        );
     }
 
-    protected function isManuskript(Route $route)
+    protected function isManuskript(Route $route): bool
     {
-        return $route->getPrefix() === 'manuskript';
+        return $route->getPrefix() === Config::get('manuskript.path', 'manuskript');
     }
 }

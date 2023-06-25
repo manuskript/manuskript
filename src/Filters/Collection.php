@@ -7,7 +7,7 @@ use Manuskript\Support\Collection as BaseCollection;
 
 class Collection extends BaseCollection
 {
-    public function active(Request $request)
+    public function active(Request $request): self
     {
         return $this->filter->isActive($request);
     }

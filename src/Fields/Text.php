@@ -10,7 +10,7 @@ class Text extends Field
     use Sortable;
     use ModifiesValueBeforeSave;
 
-    protected function booting()
+    protected function booting(): void
     {
         $this->showOnShow(true);
         $this->showOnEdit(true);
