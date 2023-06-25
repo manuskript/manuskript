@@ -20,27 +20,27 @@ trait ConditionalRendered
         return Arr::get($this->shouldRender, $key, false);
     }
 
-    public function showOnIndex(bool|callable $boolean = true): self
+    public function showOnIndex(bool|callable $boolean = true): static
     {
         return $this->updateShouldRender('index', $boolean);
     }
 
-    public function showOnShow(bool|callable $boolean = true): self
+    public function showOnShow(bool|callable $boolean = true): static
     {
         return $this->updateShouldRender('show', $boolean);
     }
 
-    public function showOnCreate(bool|callable $boolean = true): self
+    public function showOnCreate(bool|callable $boolean = true): static
     {
         return $this->updateShouldRender('create', $boolean);
     }
 
-    public function showOnEdit(bool|callable $boolean = true): self
+    public function showOnEdit(bool|callable $boolean = true): static
     {
         return $this->updateShouldRender('edit', $boolean);
     }
 
-    protected function updateShouldRender(string $key, bool|callable $value = true): self
+    protected function updateShouldRender(string $key, bool|callable $value = true): static
     {
         if (is_array($key)) {
             $this->shouldRender = array_merge($this->shouldRender, $key);

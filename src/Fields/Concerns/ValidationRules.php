@@ -10,7 +10,7 @@ trait ValidationRules
 {
     protected array $rules = [];
 
-    public function required(bool|callable $boolean = true): self
+    public function required(bool|callable $boolean = true): static
     {
         $required =  is_callable($boolean)
             ? $boolean(Container::getInstance()->make(Request::class))
@@ -23,7 +23,7 @@ trait ValidationRules
         return $this->setAttribute('required', $required);
     }
 
-    public function rules(array|callable $rules, bool $override = false): self
+    public function rules(array|callable $rules, bool $override = false): static
     {
         $values = is_callable($rules)
             ? $rules(Container::getInstance()->make(Request::class))
@@ -43,7 +43,7 @@ trait ValidationRules
         return $this;
     }
 
-    public function getRules()
+    public function getRules(): array
     {
         return $this->rules;
     }

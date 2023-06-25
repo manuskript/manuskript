@@ -7,7 +7,7 @@ use Manuskript\Support\Collection as BaseCollection;
 
 class Collection extends BaseCollection
 {
-    public function getCurrent(Request $request)
+    public function getCurrent(Request $request): int
     {
         return $request->perPage ?? $this->first();
     }

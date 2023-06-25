@@ -11,12 +11,12 @@ class UrlGenerator
     ) {
     }
 
-    public function route($name, $parameters = [], $absolute = false)
+    public function route($name, $parameters = [], $absolute = false): string
     {
         return $this->generator->route('manuskript.' . $name, $parameters, $absolute);
     }
 
-    public function __call($method, $args)
+    public function __call($method, $args): mixed
     {
         return call_user_func([$this->generator, $method], ...$args);
     }

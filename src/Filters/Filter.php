@@ -32,14 +32,14 @@ abstract class Filter implements Arrayable, JsonSerializable
 
     abstract protected function handle(Builder $query, Request $request): void;
 
-    public function isActive(Request $request = null)
+    public function isActive(Request $request = null): bool
     {
         $request = $request ?? Container::getInstance()->make(Request::class);
 
         return in_array(static::name(), $request->filter ?? []);
     }
 
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'name' => $this->name(),
@@ -48,7 +48,7 @@ abstract class Filter implements Arrayable, JsonSerializable
         ];
     }
 
-    public function jsonSerialize(): mixed
+    public function jsonSerialize(): array
     {
         return $this->toArray();
     }

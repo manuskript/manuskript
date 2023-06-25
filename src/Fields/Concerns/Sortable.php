@@ -6,7 +6,7 @@ trait Sortable
 {
     protected bool $sortable = false;
 
-    public function sortable(bool|callable $boolean = true): self
+    public function sortable(bool|callable $boolean = true): static
     {
         $this->sortable = $boolean;
 

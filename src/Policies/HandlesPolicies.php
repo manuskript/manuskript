@@ -38,7 +38,7 @@ trait HandlesPolicies
         return static::fromPolicy('restore', $request);
     }
 
-    protected static function policy()
+    protected static function policy(): Policy
     {
         if (isset(static::$policy)) {
             return new static::$policy();

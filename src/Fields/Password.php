@@ -29,7 +29,7 @@ class Password extends Field
         return Hash::make($this->getRawValue());
     }
 
-    public function getValue(): mixed
+    public function getValue(): string
     {
         return '';
     }
