@@ -28,6 +28,10 @@ export const Label = forwardRef(({as: Element = "label", className, required, ch
     </Element>
 ));
 
+export const Error = forwardRef(({as: Element = "div", className, ...props}, ref) => (
+    <Element ref={ref} className={classNames(className, "mt-1 text-xs text-red-500")} {...props} />
+));
+
 export const Field = forwardRef(({type, ...props}, ref) => {
     let Control;
 
