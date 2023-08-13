@@ -535,7 +535,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Error: () => (/* binding */ Error),
-/* harmony export */   Field: () => (/* binding */ Field),
 /* harmony export */   Label: () => (/* binding */ Label),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -550,8 +549,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 var _excluded = ["as", "className"],
   _excluded2 = ["as", "className"],
   _excluded3 = ["as", "className", "required", "children"],
-  _excluded4 = ["as", "className"],
-  _excluded5 = ["type"];
+  _excluded4 = ["as", "className"];
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -611,22 +609,6 @@ var Error = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(funct
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Element, _objectSpread({
     ref: ref,
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, "mt-1 text-xs text-red-500")
-  }, props));
-});
-var Field = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(function (_ref5, ref) {
-  var type = _ref5.type,
-    props = _objectWithoutProperties(_ref5, _excluded5);
-  var Control;
-  switch (type) {
-    case "checkbox":
-      Control = _Components_Controls__WEBPACK_IMPORTED_MODULE_2__.Checkbox;
-      break;
-    default:
-      Control = _Components_Controls__WEBPACK_IMPORTED_MODULE_2__.Input;
-      break;
-  }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Control, _objectSpread({
-    type: type
   }, props));
 });
 
@@ -967,6 +949,51 @@ Table.Cell = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(func
 
 /***/ }),
 
+/***/ "./resources/js/Field.js":
+/*!*******************************!*\
+  !*** ./resources/js/Field.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Field)
+/* harmony export */ });
+/* harmony import */ var _Shared_RepeatBlocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ~/Shared/RepeatBlocks */ "./resources/js/Shared/RepeatBlocks.jsx");
+/* harmony import */ var _Components_Controls_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~/Components/Controls/Input */ "./resources/js/Components/Controls/Input.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+var Field = /*#__PURE__*/function () {
+  function Field() {
+    _classCallCheck(this, Field);
+  }
+  _createClass(Field, null, [{
+    key: "resolve",
+    value: function resolve(type) {
+      if (Object.keys(Field.typeMap).includes(type)) {
+        return Field.typeMap[type];
+      }
+      return Field.defaultField;
+    }
+  }]);
+  return Field;
+}();
+_defineProperty(Field, "typeMap", {
+  repeat: _Shared_RepeatBlocks__WEBPACK_IMPORTED_MODULE_0__["default"]
+});
+_defineProperty(Field, "defaultField", _Components_Controls_Input__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Home.jsx":
 /*!*************************************!*\
   !*** ./resources/js/Pages/Home.jsx ***!
@@ -1200,6 +1227,84 @@ Show.layout = function (page) {
 
 /***/ }),
 
+/***/ "./resources/js/Shared/RepeatBlocks.jsx":
+/*!**********************************************!*\
+  !*** ./resources/js/Shared/RepeatBlocks.jsx ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RepeatBlocks)
+/* harmony export */ });
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Field__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~/Field */ "./resources/js/Field.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+var _excluded = ["className", "value", "readOnly", "onChange", "blocks"];
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+function RepeatBlocks(_ref) {
+  var className = _ref.className,
+    value = _ref.value,
+    readOnly = _ref.readOnly,
+    onChange = _ref.onChange,
+    blocks = _ref.blocks,
+    props = _objectWithoutProperties(_ref, _excluded);
+  var schema = blocks.reduce(function (data, block) {
+    data[block.name] = block;
+    return data;
+  }, {});
+  console.log(schema);
+  function add(key) {
+    var _schema$key = schema[key],
+      name = _schema$key.name,
+      content = _schema$key.value;
+    onChange([].concat(_toConsumableArray(value), [_defineProperty({}, name, content)]));
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+      onClick: function onClick() {
+        return add('example');
+      },
+      children: "add"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className),
+      children: value.map(function (resource) {
+        var _Object$entries = Object.entries(resource),
+          _Object$entries2 = _slicedToArray(_Object$entries, 2),
+          name = _Object$entries2[0],
+          value = _Object$entries2[1];
+        console.log(name, value);
+      })
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Shared/ResourceFields.jsx":
 /*!************************************************!*\
   !*** ./resources/js/Shared/ResourceFields.jsx ***!
@@ -1211,10 +1316,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ ResourceFields)
 /* harmony export */ });
-/* harmony import */ var _Components_Form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Components/Form */ "./resources/js/Components/Form.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Components_Form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ~/Components/Form */ "./resources/js/Components/Form.jsx");
+/* harmony import */ var _Components_Controls_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~/Components/Controls/Input */ "./resources/js/Components/Controls/Input.jsx");
+/* harmony import */ var _Field__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~/Field */ "./resources/js/Field.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-var _excluded = ["label", "required", "readOnly"];
+var _excluded = ["label", "type", "required", "readOnly"];
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1232,6 +1339,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function ResourceFields(_ref) {
   var _ref$fields = _ref.fields,
     fields = _ref$fields === void 0 ? {} : _ref$fields,
@@ -1240,33 +1348,36 @@ function ResourceFields(_ref) {
     _onChange = _ref.onChange,
     _ref$readOnly = _ref.readOnly,
     globalReadOnly = _ref$readOnly === void 0 ? false : _ref$readOnly;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Components_Form__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Components_Form__WEBPACK_IMPORTED_MODULE_0__["default"], {
     children: Object.entries(fields).map(function (_ref3) {
       var _ref4 = _slicedToArray(_ref3, 2),
         name = _ref4[0],
         _ref2 = _ref4[1];
       var label = _ref2.label,
+        type = _ref2.type,
         required = _ref2.required,
         readOnly = _ref2.readOnly,
         props = _objectWithoutProperties(_ref2, _excluded);
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_Components_Form__WEBPACK_IMPORTED_MODULE_0__["default"].Section, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      var Field = _Field__WEBPACK_IMPORTED_MODULE_2__["default"].resolve(type);
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_Components_Form__WEBPACK_IMPORTED_MODULE_0__["default"].Section, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "w-80",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Components_Form__WEBPACK_IMPORTED_MODULE_0__.Label, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Components_Form__WEBPACK_IMPORTED_MODULE_0__.Label, {
             required: required,
             htmlFor: name,
             children: label
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "w-full",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Components_Form__WEBPACK_IMPORTED_MODULE_0__.Field, _objectSpread({
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Field, _objectSpread({
             id: name,
+            type: type,
             readOnly: readOnly !== null && readOnly !== void 0 ? readOnly : globalReadOnly,
             required: required,
             onChange: function onChange(value) {
               return _onChange(name, value);
             }
-          }, props)), !!errors[name] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Components_Form__WEBPACK_IMPORTED_MODULE_0__.Error, {
+          }, props)), !!errors[name] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Components_Form__WEBPACK_IMPORTED_MODULE_0__.Error, {
             children: errors[name]
           })]
         })]

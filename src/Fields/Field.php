@@ -20,7 +20,7 @@ abstract class Field implements Arrayable, JsonSerializable
     use ConditionalRendered;
     use ValidationRules;
 
-    protected mixed $default = null;
+    protected $default;
 
     protected mixed $value;
 

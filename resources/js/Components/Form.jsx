@@ -31,19 +31,3 @@ export const Label = forwardRef(({as: Element = "label", className, required, ch
 export const Error = forwardRef(({as: Element = "div", className, ...props}, ref) => (
     <Element ref={ref} className={classNames(className, "mt-1 text-xs text-red-500")} {...props} />
 ));
-
-export const Field = forwardRef(({type, ...props}, ref) => {
-    let Control;
-
-    switch (type) {
-        case "checkbox":
-            Control = Controls.Checkbox;
-            break;
-
-        default:
-            Control = Controls.Input;
-            break;
-    }
-
-    return <Control type={type} {...props} />;
-});

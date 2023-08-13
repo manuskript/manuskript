@@ -16,6 +16,7 @@ class ServiceProvider extends BaseServiceProvider
     public function register(): void
     {
         $this->configure();
+        $this->configurePublishing();
         $this->registerServices();
     }
 
@@ -26,7 +27,7 @@ class ServiceProvider extends BaseServiceProvider
         $this->registerWebRoutes();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->mergeConfigFrom(
             __DIR__ . '/../config/manuskript.php',
@@ -36,7 +37,7 @@ class ServiceProvider extends BaseServiceProvider
         config('ziggy.groups.manuskript', [config('manuskript.path') . '.*']);
     }
 
-    protected function configurePublishing()
+    protected function configurePublishing(): void
     {
         $this->publishes([
             __DIR__ . '/../public/' => public_path('vendor/manuskript'),
@@ -53,7 +54,7 @@ class ServiceProvider extends BaseServiceProvider
         }
     }
 
-    protected function registerServices()
+    protected function registerServices(): void
     {
         $this->app->register(InertiaServiceProvider::class);
         $this->app->register(ZiggyServiceProvider::class);
@@ -61,17 +62,17 @@ class ServiceProvider extends BaseServiceProvider
         $this->app->bind(UrlGenerator::class);
     }
 
-    protected function registerRouteBindings()
+    protected function registerRouteBindings(): void
     {
         Route::bind('resource', new ResourceRouteBinding());
     }
 
-    protected function registerViews()
+    protected function registerViews(): void
     {
         $this->loadViewsFrom(__DIR__ . '/../views', 'manuskript');
     }
 
-    protected function registerWebRoutes()
+    protected function registerWebRoutes(): void
     {
         Route::group([
             'prefix' => config('manuskript.path'),

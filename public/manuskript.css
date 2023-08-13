@@ -642,6 +642,9 @@ select {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.static {
+  position: static;
+}
 .sticky {
   position: sticky;
 }
