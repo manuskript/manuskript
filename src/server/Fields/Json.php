@@ -32,7 +32,9 @@ class Json extends Field
     {
         parent::hydrate($values);
 
-        $this->fillRow($values);
+        if(is_array($values)) {
+            $this->fillRow($values);
+        }
     }
 
     private function fillRow(array $values): void
