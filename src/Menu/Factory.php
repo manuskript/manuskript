@@ -3,6 +3,7 @@
 namespace Manuskript\Menu;
 
 use InvalidArgumentException;
+use Manuskript\Manuskript;
 use Manuskript\Support\Arr;
 use Manuskript\Support\Collection;
 
@@ -61,9 +62,9 @@ class Factory
         return new Item($label, $url);
     }
 
-    public function fromResources(array $resources): Collection
+    public function fromResources(?array $resources = null): Collection
     {
-        return Collection::make($resources)
+        return Collection::make($resources ?? Manuskript::$resources)
             ->filter(fn ($resource) => $resource::isVisibleInMenu())
             ->groupBy(fn ($resource) => $resource::menuGroup())
             ->map(function ($resources, $label) {
