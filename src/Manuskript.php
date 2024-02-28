@@ -6,6 +6,7 @@ use Composer\InstalledVersions;
 use Illuminate\Container\Container;
 use Illuminate\Http\Request;
 use Manuskript\Auth\Authorize;
+use Manuskript\Menu\Factory;
 use Manuskript\Support\Arr;
 use Manuskript\Support\Str;
 
@@ -54,5 +55,10 @@ class Manuskript
     public static function resources(): array
     {
         return static::$resources ?? [];
+    }
+
+    public static function createMenu(callable $callback): void
+    {
+        $callback(new Factory);
     }
 }
