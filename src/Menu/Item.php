@@ -15,8 +15,7 @@ class Item implements Arrayable, JsonSerializable
     public function __construct(
         protected string $label,
         protected string|Closure $url
-    ) {
-    }
+    ) {}
 
     public function url(): string
     {
@@ -27,7 +26,7 @@ class Item implements Arrayable, JsonSerializable
 
     public function isActive(?Request $request = null): bool
     {
-        $request = $request ?? Container::getInstance()->make(Request::class);
+        $request ??= Container::getInstance()->make(Request::class);
 
         return Str::startsWith($request->url(), $this->url());
     }

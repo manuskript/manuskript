@@ -34,7 +34,7 @@ abstract class Filter implements Arrayable, JsonSerializable
 
     public function isActive(Request $request = null): bool
     {
-        $request = $request ?? Container::getInstance()->make(Request::class);
+        $request ??= Container::getInstance()->make(Request::class);
 
         return in_array(static::name(), $request->filter ?? []);
     }

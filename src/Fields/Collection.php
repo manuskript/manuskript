@@ -17,14 +17,14 @@ class Collection extends BaseCollection
     public function toModelAttributes(): array
     {
         return $this->mapToNames(
-            static fn ($field) => $field->toModelAttribute()
+            static fn($field) => $field->toModelAttribute()
         );
     }
 
     public function rules(): array
     {
         return $this->mapToNames(
-            static fn ($field) => $field->getRules()
+            static fn($field) => $field->getRules()
         );
     }
 

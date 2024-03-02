@@ -12,7 +12,13 @@ export default function ResourceFields({fields = {}, errors = {}, onChange, read
                         </Label>
                     </div>
                     <div className="w-full">
-                        <Field id={name} readOnly={readOnly ?? globalReadOnly} required={required} onChange={value => onChange(name, value)} {...props} />
+                        <Field
+                            id={name}
+                            readOnly={readOnly ?? globalReadOnly}
+                            required={required}
+                            onChange={value => onChange(name, value)}
+                            {...props}
+                        />
                         {!!errors[name] && <Error>{errors[name]}</Error>}
                     </div>
                 </Form.Section>
