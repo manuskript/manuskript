@@ -65,8 +65,11 @@ class Factory
     public function fromResources(?array $resources = null): Collection
     {
         return Collection::make($resources ?? Manuskript::$resources)
-            ->filter(fn ($resource) => $resource::isVisibleInMenu())
-            ->groupBy(fn ($resource) => $resource::menuGroup())
+            ->filter(
+                fn($resource) => $resource::isVisibleInMenu()
+                    && Guard::isAuthorized('viewAny', $resource::policy())
+            )
+            ->groupBy(fn($resource) => $resource::menuGroup())
             ->map(function ($resources, $label) {
                 return $this->make($label, $resources->map(function ($resource) {
                     return [$resource::menuLabel(), fn () => $resource::rootUrl()];

@@ -11,18 +11,19 @@ use Manuskript\Facades\URL;
 use Manuskript\Fields\Collection as FieldsCollection;
 use Manuskript\Filters\Collection as FiltersCollection;
 use Manuskript\Pagination\Collection as PaginationCollection;
-use Manuskript\Policies\HandlesPolicies;
+use Manuskript\Policies\Policy;
 use Manuskript\Support\Collection;
 use Manuskript\Support\Str;
 use ReflectionClass;
 
 class Resource
 {
-    use HandlesPolicies;
     use RegistersMenu;
     use Searchable;
 
     public static string $model;
+
+    protected static ?string $policy;
 
     protected static ?array $actions;
 
@@ -104,6 +105,15 @@ class Resource
             static::fields(),
             fn ($field) => $field->shouldRender($context)
         ));
+    }
+
+    public static function policy(): Policy
+    {
+        if (isset(static::$policy)) {
+            return new static::$policy();
+        }
+
+        return new Policy();
     }
 
     public static function queryWithRelations($context): Builder
