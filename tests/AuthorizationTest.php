@@ -16,7 +16,7 @@ class AuthorizationTest extends TestCase
 
         $this->assertFalse(Manuskript::check($request));
 
-        Manuskript::auth(fn () => true);
+        Manuskript::auth(fn() => true);
         $this->assertTrue(Manuskript::check($request));
     }
 
@@ -24,7 +24,7 @@ class AuthorizationTest extends TestCase
     {
         $this->expectException(AccessDeniedHttpException::class);
 
-        Manuskript::auth(fn () => false);
+        Manuskript::auth(fn() => false);
 
         $request = Request::create('/manuskript');
         (new Authorize())->handle($request, function ($request) {

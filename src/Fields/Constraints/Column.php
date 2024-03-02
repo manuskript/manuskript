@@ -11,12 +11,11 @@ class Column implements Arrayable
 {
     public function __construct(
         protected Field $field
-    ) {
-    }
+    ) {}
 
     public function order($request = null)
     {
-        $request = $request ?? Container::getInstance()->make(Request::class);
+        $request ??= Container::getInstance()->make(Request::class);
 
         if (!$this->field->getAttribute('sortable', false)) {
             return false;

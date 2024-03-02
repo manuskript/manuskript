@@ -25,7 +25,7 @@ class ResourcesController
         $query = $resource::query()->context('index');
 
         $filters->active($request)->each(
-            fn ($filter) => $query->run($filter)
+            fn($filter) => $query->run($filter)
         );
 
         if ($request->has('q')) {

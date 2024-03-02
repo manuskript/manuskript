@@ -12,8 +12,7 @@ class Response implements Responsable
     public function __construct(
         protected string $component,
         protected array $props = []
-    ) {
-    }
+    ) {}
 
     public static function make(string $component, array $props = [])
     {

@@ -18,7 +18,7 @@ class Resource implements Arrayable, JsonSerializable
         protected string $context
     ) {
         $this->resource =  Manuskript::resolve(
-            fn ($resource) => $resource::$model === $this->model::class
+            fn($resource) => $resource::$model === $this->model::class
         );
     }
 

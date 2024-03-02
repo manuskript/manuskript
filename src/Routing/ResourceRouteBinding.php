@@ -26,7 +26,7 @@ class ResourceRouteBinding
     protected function resolveResource(string $handle): ?string
     {
         return Manuskript::resolve(
-            static fn ($resource) => $resource::slug() === $handle
+            static fn($resource) => $resource::slug() === $handle
         );
     }
 

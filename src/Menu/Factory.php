@@ -2,7 +2,10 @@
 
 namespace Manuskript\Menu;
 
+use Illuminate\Container\Container;
+use Illuminate\Http\Request;
 use InvalidArgumentException;
+use Manuskript\Auth\Guard;
 use Manuskript\Manuskript;
 use Manuskript\Support\Arr;
 use Manuskript\Support\Collection;
@@ -45,7 +48,7 @@ class Factory
 
         return tap(
             new Menu($label, $items),
-            static fn ($menu) => static::register($menu)
+            static fn($menu) => static::register($menu)
         );
     }
 
@@ -72,7 +75,7 @@ class Factory
             ->groupBy(fn($resource) => $resource::menuGroup())
             ->map(function ($resources, $label) {
                 return $this->make($label, $resources->map(function ($resource) {
-                    return [$resource::menuLabel(), fn () => $resource::rootUrl()];
+                    return [$resource::menuLabel(), fn() => $resource::rootUrl()];
                 })->toArray());
             })->values();
     }

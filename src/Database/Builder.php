@@ -12,8 +12,7 @@ class Builder
 
     public function __construct(
         protected EloquentBuilder $query
-    ) {
-    }
+    ) {}
 
     public function context($context)
     {
@@ -97,7 +96,7 @@ class Builder
     protected function transformModels(array $models): Collection
     {
         return new Collection(array_map(
-            fn ($model) => $this->toResource($model),
+            fn($model) => $this->toResource($model),
             $models
         ));
     }
