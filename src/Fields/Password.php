@@ -26,7 +26,11 @@ class Password extends Field
             return $modifier($this->getRawValue());
         }
 
-        return Hash::make($this->getRawValue());
+        if($value = $this->getRawValue()) {
+            return Hash::make($value);
+        }
+
+        return null;
     }
 
     public function getValue(): string
