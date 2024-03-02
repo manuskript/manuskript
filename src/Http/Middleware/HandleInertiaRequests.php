@@ -4,7 +4,7 @@ namespace Manuskript\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Inertia\Middleware;
-use Manuskript\Facades\Menu;
+use Manuskript\Menu\Factory as Menu;
 
 class HandleInertiaRequests extends Middleware
 {
