@@ -136,7 +136,7 @@ abstract class Field implements Arrayable, JsonSerializable
 
     protected function bootTraits($class = null): void
     {
-        $class = $class ?? new ReflectionClass($this);
+        $class ??= new ReflectionClass($this);
 
         foreach ($class->getTraits() as $trait) {
             $method = 'boot' . $trait->getShortName();

@@ -8,8 +8,7 @@ class UrlGenerator
 {
     public function __construct(
         protected Illuminate $generator
-    ) {
-    }
+    ) {}
 
     public function route($name, $parameters = [], $absolute = false): string
     {

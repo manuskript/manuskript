@@ -19,8 +19,7 @@ class RedirectResponse implements Responsable
         protected string $url,
         protected int $status = 302,
         protected array $headers = []
-    ) {
-    }
+    ) {}
 
     public static function route(string $route, $params = [], int $status = 302, array $headers = []): static
     {

@@ -6,8 +6,7 @@ class FieldValue
 {
     public function __construct(
         protected mixed $value
-    ) {
-    }
+    ) {}
 
     public function getValue(): mixed
     {

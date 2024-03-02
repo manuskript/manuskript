@@ -30,14 +30,14 @@ abstract class Action implements Arrayable, JsonSerializable
 
     public function __invoke(Collection|Resource $resources, $request = null): void
     {
-        $request = $request ?? Container::getInstance()->make(Request::class);
+        $request ??= Container::getInstance()->make(Request::class);
 
         if ($resources instanceof Resource) {
             $this->handle($resources, $request);
         }
 
         if ($resources instanceof Collection) {
-            $resources->each(fn ($resource) => $this->handle($resource, $request));
+            $resources->each(fn($resource) => $this->handle($resource, $request));
         }
     }
 

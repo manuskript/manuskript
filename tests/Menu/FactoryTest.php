@@ -63,9 +63,9 @@ class FactoryTest extends TestCase
     {
         $expected = Collection::make([
             new Menu('Menu', [
-                new Item('Foo', fn () => URL::route('resources.index', FooResource::slug())),
-                new Item('Bar', fn () => URL::route('resources.index', BarResource::slug())),
-            ])
+                new Item('Foo', fn() => URL::route('resources.index', FooResource::slug())),
+                new Item('Bar', fn() => URL::route('resources.index', BarResource::slug())),
+            ]),
         ]);
 
         $factory = new Factory();

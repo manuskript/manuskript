@@ -10,8 +10,7 @@ class Menu implements Arrayable, JsonSerializable
     public function __construct(
         protected string $label,
         protected array $items = []
-    ) {
-    }
+    ) {}
 
     public function label()
     {

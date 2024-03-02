@@ -74,7 +74,7 @@ class FieldTest extends TestCase
         $field->showOnCreate(true)->showOnCreate(false);
         $this->assertFalse($field->shouldRender('create'));
 
-        $field->showOnEdit(fn ($request) => true);
+        $field->showOnEdit(fn($request) => true);
         $this->assertTrue($field->shouldRender('edit'));
     }
 

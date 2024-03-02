@@ -49,7 +49,7 @@ class Resource
     public static function actions(): ActionsCollection
     {
         return new ActionsCollection(array_map(
-            fn ($action) => new $action(),
+            fn($action) => new $action(),
             static::$actions ?? [Destroy::class]
         ));
     }
@@ -57,7 +57,7 @@ class Resource
     public static function filters(): FiltersCollection
     {
         return new FiltersCollection(array_map(
-            fn ($filter) => new $filter(),
+            fn($filter) => new $filter(),
             static::$filters ?? []
         ));
     }
@@ -103,7 +103,7 @@ class Resource
     {
         return new FieldsCollection(array_filter(
             static::fields(),
-            fn ($field) => $field->shouldRender($context)
+            fn($field) => $field->shouldRender($context)
         ));
     }
 

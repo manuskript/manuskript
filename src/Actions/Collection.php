@@ -8,6 +8,6 @@ class Collection extends BaseCollection
 {
     public function byName($name): Action
     {
-        return $this->first(fn ($action) => $action->name() === $name);
+        return $this->first(fn($action) => $action->name() === $name);
     }
 }

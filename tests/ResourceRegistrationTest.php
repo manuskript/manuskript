@@ -16,7 +16,7 @@ class ResourceRegistrationTest extends TestCase
         Manuskript::register('C');
         $this->assertEquals(['A', 'B', 'C'], Manuskript::resources());
 
-        Manuskript::register(fn ($request) => 'D');
+        Manuskript::register(fn($request) => 'D');
         $this->assertEquals(['A', 'B', 'C', 'D'], Manuskript::resources());
     }
 
@@ -27,7 +27,7 @@ class ResourceRegistrationTest extends TestCase
             BarResource::class,
         ];
 
-        $resolved = Manuskript::resolve(fn ($resource) => $resource::slug() === 'bar');
+        $resolved = Manuskript::resolve(fn($resource) => $resource::slug() === 'bar');
 
         $this->assertEquals(BarResource::class, $resolved);
     }

@@ -27,7 +27,8 @@ trait ValidationRules
     public function addRules(Rule|string|array $rules): self
     {
         $this->rules = array_unique(array_merge(
-            $this->rules, is_array($rules) ? $rules : [$rules]
+            $this->rules,
+            is_array($rules) ? $rules : [$rules]
         ));
 
         return $this;

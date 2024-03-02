@@ -25,11 +25,7 @@ Layout.Main = forwardRef(({as: Element = "nav", className, ...props}, ref) => (
 ));
 
 Layout.Container = forwardRef(({as: Element = "div", className, ...props}, ref) => (
-    <Element
-        ref={ref}
-        className={classNames(className, "mx-auto mb-6 w-full max-w-7xl")}
-        {...props}
-    />
+    <Element ref={ref} className={classNames(className, "mx-auto mb-6 w-full max-w-7xl")} {...props} />
 ));
 
 export default Layout;
