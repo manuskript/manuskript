@@ -6,6 +6,7 @@ use Composer\InstalledVersions;
 use Illuminate\Container\Container;
 use Illuminate\Http\Request;
 use Manuskript\Auth\Authorize;
+use Manuskript\Auth\Guard;
 use Manuskript\Menu\Factory;
 use Manuskript\Support\Arr;
 use Manuskript\Support\Str;
@@ -23,9 +24,7 @@ class Manuskript
 
     public static function can($scope, $resource): bool
     {
-        $method = Str::camel('can_' . $scope);
-
-        return call_user_func([$resource, $method], Container::getInstance()->make(Request::class));
+        return Guard::isAuthorized($scope, $resource::policy());
     }
 
     public static function auth(callable $callback): void
