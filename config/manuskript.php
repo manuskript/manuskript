@@ -27,5 +27,8 @@ return [
     | Here you define the default disk of the filesystem.
     | These files will be available from Manuskript.
     */
-    'filesystem' => 'public',
+    'filesystem' => [
+        'disk' => 'public',
+        'folder' => null,
+    ],
 ];
