@@ -211,6 +211,75 @@ var IconChevronUp = (0,_createReactComponent_js__WEBPACK_IMPORTED_MODULE_0__["de
 
 /***/ }),
 
+/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconFile.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconFile.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ IconFile)
+/* harmony export */ });
+/* harmony import */ var _createReactComponent_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.js */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.js");
+/**
+ * @tabler/icons-react v2.22.0 - MIT
+ */
+
+
+
+var IconFile = (0,_createReactComponent_js__WEBPACK_IMPORTED_MODULE_0__["default"])("file", "IconFile", [
+  ["path", { d: "M14 3v4a1 1 0 0 0 1 1h4", key: "svg-0" }],
+  [
+    "path",
+    {
+      d: "M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z",
+      key: "svg-1"
+    }
+  ]
+]);
+
+
+//# sourceMappingURL=IconFile.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconFolder.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconFolder.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ IconFolder)
+/* harmony export */ });
+/* harmony import */ var _createReactComponent_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.js */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.js");
+/**
+ * @tabler/icons-react v2.22.0 - MIT
+ */
+
+
+
+var IconFolder = (0,_createReactComponent_js__WEBPACK_IMPORTED_MODULE_0__["default"])("folder", "IconFolder", [
+  [
+    "path",
+    {
+      d: "M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2",
+      key: "svg-0"
+    }
+  ]
+]);
+
+
+//# sourceMappingURL=IconFolder.js.map
+
+
+/***/ }),
+
 /***/ "./resources/js/App.jsx":
 /*!******************************!*\
   !*** ./resources/js/App.jsx ***!
@@ -292,6 +361,66 @@ function App(_ref) {
     })]
   });
 }
+
+/***/ }),
+
+/***/ "./resources/js/Components/Breadcrumb.jsx":
+/*!************************************************!*\
+  !*** ./resources/js/Components/Breadcrumb.jsx ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _inertiajs_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/react */ "./node_modules/@inertiajs/react/dist/index.esm.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+var _excluded = ["as", "className"],
+  _excluded2 = ["as", "active", "className"];
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+var Breadcrumb = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_2__.forwardRef)(function (_ref, ref) {
+  var _ref$as = _ref.as,
+    Element = _ref$as === void 0 ? "ul" : _ref$as,
+    className = _ref.className,
+    props = _objectWithoutProperties(_ref, _excluded);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Element, _objectSpread({
+    ref: ref,
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, "flex divide-x divide-slate-200 text-slate-400")
+  }, props));
+});
+Breadcrumb.Item = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_2__.forwardRef)(function (_ref2, ref) {
+  var _ref2$as = _ref2.as,
+    Element = _ref2$as === void 0 ? "li" : _ref2$as,
+    active = _ref2.active,
+    className = _ref2.className,
+    props = _objectWithoutProperties(_ref2, _excluded2);
+  var InnerElement = active ? "span" : _inertiajs_react__WEBPACK_IMPORTED_MODULE_0__.Link;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Element, {
+    ref: ref,
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, "px-5 py-2 text-sm"),
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(InnerElement, _objectSpread({
+      className: classnames__WEBPACK_IMPORTED_MODULE_1___default()("border-b border-transparent", active ? "text-slate-600" : "hover:border-blue-600 hover:text-slate-600")
+    }, props))
+  });
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Breadcrumb);
 
 /***/ }),
 
@@ -460,6 +589,108 @@ var Checkbox = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(fu
 
 /***/ }),
 
+/***/ "./resources/js/Components/Controls/Directory.jsx":
+/*!********************************************************!*\
+  !*** ./resources/js/Components/Controls/Directory.jsx ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconFolder.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+var _excluded = ["as", "className", "name"];
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+var Directory = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(function (_ref, ref) {
+  var _ref$as = _ref.as,
+    Element = _ref$as === void 0 ? "div" : _ref$as,
+    className = _ref.className,
+    name = _ref.name,
+    props = _objectWithoutProperties(_ref, _excluded);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Element, _objectSpread(_objectSpread({
+    ref: ref
+  }, props), {}, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      size: 24,
+      className: "mx-auto"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      title: name,
+      className: "block truncate text-center text-sm text-slate-500",
+      children: name
+    })]
+  }));
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Directory);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Controls/File.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/Components/Controls/File.jsx ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconFile.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+var _excluded = ["as", "className", "name"];
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+var File = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(function (_ref, ref) {
+  var _ref$as = _ref.as,
+    Element = _ref$as === void 0 ? "div" : _ref$as,
+    className = _ref.className,
+    name = _ref.name,
+    props = _objectWithoutProperties(_ref, _excluded);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Element, _objectSpread(_objectSpread({
+    ref: ref
+  }, props), {}, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      size: 24,
+      className: "mx-auto"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      title: name,
+      className: "block truncate text-center text-sm text-slate-500",
+      children: name
+    })]
+  }));
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (File);
+
+/***/ }),
+
 /***/ "./resources/js/Components/Controls/Input.jsx":
 /*!****************************************************!*\
   !*** ./resources/js/Components/Controls/Input.jsx ***!
@@ -516,10 +747,16 @@ var Input = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(funct
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Checkbox: () => (/* reexport safe */ _Checkbox__WEBPACK_IMPORTED_MODULE_0__["default"]),
-/* harmony export */   Input: () => (/* reexport safe */ _Input__WEBPACK_IMPORTED_MODULE_1__["default"])
+/* harmony export */   Directory: () => (/* reexport safe */ _Directory__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   File: () => (/* reexport safe */ _File__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   Input: () => (/* reexport safe */ _Input__WEBPACK_IMPORTED_MODULE_3__["default"])
 /* harmony export */ });
 /* harmony import */ var _Checkbox__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Checkbox */ "./resources/js/Components/Controls/Checkbox.jsx");
-/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Input */ "./resources/js/Components/Controls/Input.jsx");
+/* harmony import */ var _Directory__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Directory */ "./resources/js/Components/Controls/Directory.jsx");
+/* harmony import */ var _File__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./File */ "./resources/js/Components/Controls/File.jsx");
+/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Input */ "./resources/js/Components/Controls/Input.jsx");
+
+
 
 
 
@@ -629,6 +866,81 @@ var Field = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(funct
     type: type
   }, props));
 });
+
+/***/ }),
+
+/***/ "./resources/js/Components/Grid.jsx":
+/*!******************************************!*\
+  !*** ./resources/js/Components/Grid.jsx ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+var _excluded = ["as", "className"],
+  _excluded2 = ["as", "className"],
+  _excluded3 = ["as", "className"],
+  _excluded4 = ["as", "className"];
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+var Grid = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(function (_ref, ref) {
+  var _ref$as = _ref.as,
+    Element = _ref$as === void 0 ? "div" : _ref$as,
+    className = _ref.className,
+    props = _objectWithoutProperties(_ref, _excluded);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Element, _objectSpread({
+    ref: ref,
+    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, "w-full bg-white text-left text-sm")
+  }, props));
+});
+Grid.Head = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(function (_ref2, ref) {
+  var _ref2$as = _ref2.as,
+    Element = _ref2$as === void 0 ? "div" : _ref2$as,
+    className = _ref2.className,
+    props = _objectWithoutProperties(_ref2, _excluded2);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Element, _objectSpread({
+    ref: ref,
+    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, "border-b border-slate-200 bg-slate-50 font-medium text-slate-700")
+  }, props));
+});
+Grid.Body = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(function (_ref3, ref) {
+  var _ref3$as = _ref3.as,
+    Element = _ref3$as === void 0 ? "div" : _ref3$as,
+    className = _ref3.className,
+    props = _objectWithoutProperties(_ref3, _excluded3);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Element, _objectSpread({
+    ref: ref,
+    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, "grid")
+  }, props));
+});
+Grid.Item = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(function (_ref4, ref) {
+  var _ref4$as = _ref4.as,
+    Element = _ref4$as === void 0 ? "div" : _ref4$as,
+    className = _ref4.className,
+    props = _objectWithoutProperties(_ref4, _excluded4);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Element, _objectSpread({
+    ref: ref,
+    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, "p-5 hover:bg-slate-50")
+  }, props));
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Grid);
 
 /***/ }),
 
@@ -967,6 +1279,59 @@ Table.Cell = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(func
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Assets/Index.jsx":
+/*!*********************************************!*\
+  !*** ./resources/js/Pages/Assets/Index.jsx ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _inertiajs_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/react */ "./node_modules/@inertiajs/react/dist/index.esm.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~/App */ "./resources/js/App.jsx");
+/* harmony import */ var _Components_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/Components/Card */ "./resources/js/Components/Card.jsx");
+/* harmony import */ var _Shared_AssetsGrid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~/Shared/AssetsGrid */ "./resources/js/Shared/AssetsGrid.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+
+
+
+
+var Index = function Index(props) {
+  function navigate(_ref) {
+    var url = _ref.url;
+    _inertiajs_react__WEBPACK_IMPORTED_MODULE_0__.router.visit(url);
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      className: "overflow-hidden",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Shared_AssetsGrid__WEBPACK_IMPORTED_MODULE_4__["default"], _objectSpread({
+        onClick: navigate
+      }, props))
+    })
+  });
+};
+Index.layout = function (page) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_App__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: page
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Index);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Home.jsx":
 /*!*************************************!*\
   !*** ./resources/js/Pages/Home.jsx ***!
@@ -1012,11 +1377,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~/App */ "./resources/js/App.jsx");
-/* harmony import */ var _Components_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/Components/Card */ "./resources/js/Components/Card.jsx");
-/* harmony import */ var _Shared_ResourceFields__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~/Shared/ResourceFields */ "./resources/js/Shared/ResourceFields.jsx");
-/* harmony import */ var _useFormFields__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~/useFormFields */ "./resources/js/useFormFields.js");
-/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ~/Components/Button */ "./resources/js/Components/Button.jsx");
-/* harmony import */ var _Components_Layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ~/Components/Layout */ "./resources/js/Components/Layout.jsx");
+/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/Components/Button */ "./resources/js/Components/Button.jsx");
+/* harmony import */ var _Components_Card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~/Components/Card */ "./resources/js/Components/Card.jsx");
+/* harmony import */ var _Components_Layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~/Components/Layout */ "./resources/js/Components/Layout.jsx");
+/* harmony import */ var _Shared_ResourceFields__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ~/Shared/ResourceFields */ "./resources/js/Shared/ResourceFields.jsx");
+/* harmony import */ var _useFormFields__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ~/useFormFields */ "./resources/js/useFormFields.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _excluded = ["data", "updateUrl", "errors"];
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -1037,7 +1402,7 @@ var Edit = function Edit(_ref) {
     updateUrl = _ref.updateUrl,
     errors = _ref.errors,
     props = _objectWithoutProperties(_ref, _excluded);
-  var _useFormFields = (0,_useFormFields__WEBPACK_IMPORTED_MODULE_5__.useFormFields)((_resource$fields = resource.fields) !== null && _resource$fields !== void 0 ? _resource$fields : []),
+  var _useFormFields = (0,_useFormFields__WEBPACK_IMPORTED_MODULE_7__.useFormFields)((_resource$fields = resource.fields) !== null && _resource$fields !== void 0 ? _resource$fields : []),
     data = _useFormFields.data,
     setData = _useFormFields.setData,
     fields = _useFormFields.fields;
@@ -1045,15 +1410,15 @@ var Edit = function Edit(_ref) {
     _inertiajs_react__WEBPACK_IMPORTED_MODULE_0__.router.patch(updateUrl, data);
   }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Layout__WEBPACK_IMPORTED_MODULE_7__["default"].Container, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Layout__WEBPACK_IMPORTED_MODULE_5__["default"].Container, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
         primary: true,
         className: "ml-auto",
         onClick: handleSave,
         children: "Save"
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Shared_ResourceFields__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Card__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Shared_ResourceFields__WEBPACK_IMPORTED_MODULE_6__["default"], {
         fields: fields,
         errors: errors,
         onChange: setData
@@ -1151,22 +1516,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _inertiajs_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/react */ "./node_modules/@inertiajs/react/dist/index.esm.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~/App */ "./resources/js/App.jsx");
-/* harmony import */ var _Components_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/Components/Card */ "./resources/js/Components/Card.jsx");
-/* harmony import */ var _Shared_ResourceFields__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~/Shared/ResourceFields */ "./resources/js/Shared/ResourceFields.jsx");
-/* harmony import */ var _useFormFields__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~/useFormFields */ "./resources/js/useFormFields.js");
-/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ~/Components/Button */ "./resources/js/Components/Button.jsx");
-/* harmony import */ var _Components_Layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ~/Components/Layout */ "./resources/js/Components/Layout.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~/App */ "./resources/js/App.jsx");
+/* harmony import */ var _Components_Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~/Components/Card */ "./resources/js/Components/Card.jsx");
+/* harmony import */ var _Shared_ResourceFields__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/Shared/ResourceFields */ "./resources/js/Shared/ResourceFields.jsx");
+/* harmony import */ var _useFormFields__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~/useFormFields */ "./resources/js/useFormFields.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _excluded = ["data", "updateUrl", "errors"];
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
 
 
 
@@ -1179,11 +1538,11 @@ var Show = function Show(_ref) {
     updateUrl = _ref.updateUrl,
     errors = _ref.errors,
     props = _objectWithoutProperties(_ref, _excluded);
-  var _useFormFields = (0,_useFormFields__WEBPACK_IMPORTED_MODULE_5__.useFormFields)((_resource$fields = resource.fields) !== null && _resource$fields !== void 0 ? _resource$fields : []),
+  var _useFormFields = (0,_useFormFields__WEBPACK_IMPORTED_MODULE_4__.useFormFields)((_resource$fields = resource.fields) !== null && _resource$fields !== void 0 ? _resource$fields : []),
     fields = _useFormFields.fields;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Shared_ResourceFields__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Shared_ResourceFields__WEBPACK_IMPORTED_MODULE_3__["default"], {
         readOnly: true,
         fields: fields,
         errors: errors
@@ -1192,11 +1551,105 @@ var Show = function Show(_ref) {
   });
 };
 Show.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_App__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_App__WEBPACK_IMPORTED_MODULE_1__["default"], {
     children: page
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Show);
+
+/***/ }),
+
+/***/ "./resources/js/Shared/AssetsGrid.jsx":
+/*!********************************************!*\
+  !*** ./resources/js/Shared/AssetsGrid.jsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ AssetsGrid)
+/* harmony export */ });
+/* harmony import */ var _inertiajs_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/react */ "./node_modules/@inertiajs/react/dist/index.esm.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Components_Breadcrumb__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Components/Breadcrumb */ "./resources/js/Components/Breadcrumb.jsx");
+/* harmony import */ var _Components_Controls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Components/Controls */ "./resources/js/Components/Controls/index.js");
+/* harmony import */ var _Components_Grid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/Grid */ "./resources/js/Components/Grid.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+var _excluded = ["name", "folder", "breadcrumbs", "directories", "files", "onClick"],
+  _excluded2 = ["name"],
+  _excluded3 = ["name"];
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+
+function AssetsGrid(_ref) {
+  var name = _ref.name,
+    folder = _ref.folder,
+    breadcrumbs = _ref.breadcrumbs,
+    directories = _ref.directories,
+    files = _ref.files,
+    _onClick = _ref.onClick,
+    props = _objectWithoutProperties(_ref, _excluded);
+  var currentUrl = (0,_inertiajs_react__WEBPACK_IMPORTED_MODULE_0__.usePage)().url;
+  var isEmpty = !directories.length && !files.length;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_Components_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Grid__WEBPACK_IMPORTED_MODULE_4__["default"].Head, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Breadcrumb__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        children: breadcrumbs.map(function (_ref2) {
+          var label = _ref2.label,
+            url = _ref2.url;
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Breadcrumb__WEBPACK_IMPORTED_MODULE_2__["default"].Item, {
+            href: url,
+            active: url === currentUrl,
+            children: label
+          });
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_Components_Grid__WEBPACK_IMPORTED_MODULE_4__["default"].Body, {
+      className: classnames__WEBPACK_IMPORTED_MODULE_1___default()({
+        "grid-cols-4": !isEmpty
+      }),
+      children: [directories.map(function (_ref3) {
+        var name = _ref3.name,
+          props = _objectWithoutProperties(_ref3, _excluded2);
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Controls__WEBPACK_IMPORTED_MODULE_3__.Directory, {
+          name: name,
+          as: _Components_Grid__WEBPACK_IMPORTED_MODULE_4__["default"].Item,
+          onClick: function onClick() {
+            return _onClick(_objectSpread({
+              name: name
+            }, props));
+          }
+        });
+      }), files.map(function (_ref4) {
+        var name = _ref4.name,
+          props = _objectWithoutProperties(_ref4, _excluded3);
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Controls__WEBPACK_IMPORTED_MODULE_3__.File, {
+          name: name,
+          as: _Components_Grid__WEBPACK_IMPORTED_MODULE_4__["default"].Item,
+          onClick: function onClick() {
+            return _onClick(_objectSpread({
+              name: name
+            }, props));
+          }
+        });
+      })]
+    })]
+  });
+}
 
 /***/ }),
 
@@ -44193,6 +44646,8 @@ module.exports = function getSideChannel() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./Assets/Index": "./resources/js/Pages/Assets/Index.jsx",
+	"./Assets/Index.jsx": "./resources/js/Pages/Assets/Index.jsx",
 	"./Home": "./resources/js/Pages/Home.jsx",
 	"./Home.jsx": "./resources/js/Pages/Home.jsx",
 	"./Resources/Edit": "./resources/js/Pages/Resources/Edit.jsx",
