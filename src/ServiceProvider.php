@@ -5,6 +5,7 @@ namespace Manuskript;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use Inertia\ServiceProvider as InertiaServiceProvider;
+use Manuskript\Console\Commands;
 use Manuskript\Http\Middleware\Authorize;
 use Manuskript\Http\Middleware\HandleInertiaRequests;
 use Manuskript\Routing\ResourceRouteBinding;
@@ -13,6 +14,10 @@ use Tightenco\Ziggy\ZiggyServiceProvider;
 
 class ServiceProvider extends BaseServiceProvider
 {
+    private array $commands = [
+        Commands\MakeResourceCommand::class,
+    ];
+
     public function register(): void
     {
         $this->configure();
@@ -43,6 +48,9 @@ class ServiceProvider extends BaseServiceProvider
         ], 'manuskript-assets');
 
         if ($this->app->runningInConsole()) {
+
+            $this->commands($this->commands);
+
             $this->publishes([
                 __DIR__ . '/../config/manuskript.php' => config_path('manuskript.php'),
             ], 'manuskript-config');
