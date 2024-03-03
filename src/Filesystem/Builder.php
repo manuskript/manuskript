@@ -21,6 +21,18 @@ class Builder
         );
     }
 
+    public function getDirectory(?string $path): Directory
+    {
+        $path = $this->getValidatedPath($path);
+
+        return new Directory(
+            path: $path,
+            rootPath: $this->getEntryPath(),
+            directories: $this->directories($path),
+            files: $this->files($path),
+        );
+    }
+
     public function directories(?string $path)
     {
         $path = $this->getValidatedPath($path);
