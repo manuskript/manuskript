@@ -91,7 +91,7 @@ class Resource
 
     public static function perPage(): PaginationCollection
     {
-        return PaginationCollection::make(static::$perPage);
+        return new PaginationCollection(static::$perPage);
     }
 
     public static function fieldsByContext($context): FieldsCollection

@@ -43,7 +43,7 @@ abstract class Action implements Arrayable, JsonSerializable
 
     abstract protected function handle(Resource $resource, Request $request): void;
 
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'name' => $this->name(),
@@ -52,7 +52,7 @@ abstract class Action implements Arrayable, JsonSerializable
         ];
     }
 
-    public function jsonSerialize(): mixed
+    public function jsonSerialize(): array
     {
         return $this->toArray();
     }

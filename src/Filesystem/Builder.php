@@ -9,12 +9,12 @@ use Illuminate\Filesystem\FilesystemAdapter;
 use Manuskript\Exceptions\FileNotFoundHttpException;
 use Manuskript\Support\Str;
 
-class Builder
+final class Builder
 {
     private Filesystem $filesystem;
 
     public function __construct(
-        private readonly Factory $factory,
+        Factory $factory,
         private readonly Config $config,
     ) {
         $this->filesystem = $factory->disk(
@@ -104,11 +104,11 @@ class Builder
         $items = is_array($items) ? $items : [$items];
 
         return new Collection(
-            array_map(static fn(string $path) => static::transform($path), $items)
+            array_map(fn(string $path) => $this->transform($path), $items)
         );
     }
 
-    private static function transform(string $path): Resource
+    private function transform(string $path): Resource
     {
         return new Resource($path);
     }

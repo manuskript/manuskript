@@ -24,7 +24,7 @@ trait ValidationRules
         return $this->setAttribute('required', $required);
     }
 
-    public function addRules(Rule|string|array $rules): self
+    public function addRules(Rule|string|array $rules): static
     {
         $this->rules = array_unique(array_merge(
             $this->rules,

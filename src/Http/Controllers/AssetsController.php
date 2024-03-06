@@ -11,7 +11,7 @@ use Manuskript\Http\Response;
 
 class AssetsController
 {
-    public function index(Builder $builder, ?string $folder = null)
+    public function index(Builder $builder, ?string $folder = null): Response
     {
         return Response::make(
             'Assets/Index',
@@ -19,7 +19,7 @@ class AssetsController
         );
     }
 
-    public function store(Builder $builder, Request $request, ?string $folder = null)
+    public function store(Builder $builder, Request $request, ?string $folder = null): RedirectResponse
     {
         $files = $request->file('files');
 

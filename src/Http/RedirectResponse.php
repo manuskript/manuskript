@@ -21,19 +21,19 @@ final class RedirectResponse implements Responsable
         protected array $headers = []
     ) {}
 
-    public static function route(string $route, $params = [], int $status = 302, array $headers = []): static
+    public static function route(string $route, $params = [], int $status = 302, array $headers = []): self
     {
-        return new static(URL::route($route, $params), $status, $headers);
+        return new self(URL::route($route, $params), $status, $headers);
     }
 
-    public static function to(string $url, int $status = 302, array $headers = []): static
+    public static function to(string $url, int $status = 302, array $headers = []): self
     {
-        return new static($url, $status, $headers);
+        return new self($url, $status, $headers);
     }
 
-    public static function back(int $status = 302, array $headers = []): static
+    public static function back(int $status = 302, array $headers = []): self
     {
-        return static::to(URL::previous(), $status, $headers);
+        return self::to(URL::previous(), $status, $headers);
     }
 
     public function withErrors(Validator $validator): self
