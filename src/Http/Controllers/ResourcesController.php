@@ -13,7 +13,10 @@ class ResourcesController
 {
     use AuthorizeRequest;
 
-    public function index($resource, Request $request)
+    /**
+     * @param class-string<\Manuskript\Resource> $resource
+     */
+    public function index(string $resource, Request $request): Response
     {
         $this->authorize('viewAny', $resource::policy());
 
@@ -46,17 +49,24 @@ class ResourcesController
             ->with('searchable', $searchable);
     }
 
-    public function show($resource, $model)
+    /**
+     * @param class-string<\Manuskript\Resource> $resource
+     */
+    public function show(string $resource, $model): Response
     {
         $this->authorize('view', $resource::policy());
 
+        /** @var Resource $item */
         $item = $resource::query()->context('show')->findOrFail($model);
 
         return Response::make('Resources/Show')
             ->with('data', $item);
     }
 
-    public function create($resource)
+    /**
+     * @param class-string<\Manuskript\Resource> $resource
+     */
+    public function create(string $resource): Response
     {
         $this->authorize('create', $resource::policy());
 
@@ -66,13 +76,23 @@ class ResourcesController
             ->with('data', $item);
     }
 
-    public function store($resource, Request $request)
+    /**
+     * @param class-string<\Manuskript\Resource> $resource
+     */
+    public function store(string $resource, Request $request): RedirectResponse
     {
         $this->authorize('create', $resource::policy());
-        //
+
+        $model = null;
+
+        return RedirectResponse::route('resources.show', [$resource::slug(), $model])
+            ->withMessage("{$resource::label()} created.");
     }
 
-    public function edit($resource, $model)
+    /**
+     * @param class-string<\Manuskript\Resource> $resource
+     */
+    public function edit(string $resource, $model): Response
     {
         $this->authorize('update', $resource::policy());
 
@@ -84,7 +104,10 @@ class ResourcesController
             ->with('updateUrl', $item->url('resources.update'));
     }
 
-    public function update($resource, $model, Request $request)
+    /**
+     * @param class-string<\Manuskript\Resource> $resource
+     */
+    public function update(string $resource, $model, Request $request): RedirectResponse
     {
         $this->authorize('update', $resource::policy());
 

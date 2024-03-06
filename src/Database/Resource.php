@@ -11,7 +11,8 @@ use Manuskript\Support\Collection;
 
 class Resource implements Arrayable, JsonSerializable
 {
-    protected $resource;
+    /** @var null|class-string<\Manuskript\Resource>  */
+    protected ?string $resource;
 
     public function __construct(
         protected Model $model,
@@ -68,7 +69,7 @@ class Resource implements Arrayable, JsonSerializable
         ];
     }
 
-    public function jsonSerialize(): mixed
+    public function jsonSerialize(): array
     {
         return $this->toArray();
     }

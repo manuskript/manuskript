@@ -10,13 +10,13 @@ use Symfony\Component\HttpFoundation\Response as HttpResponse;
 final class Response implements Responsable
 {
     public function __construct(
-        protected string $component,
-        protected array $props = []
+        private string $component,
+        private array $props = []
     ) {}
 
-    public static function make(string $component, array $props = [])
+    public static function make(string $component, array $props = []): self
     {
-        return new static($component, $props);
+        return new self($component, $props);
     }
 
     public function with(array|string $key, $value = null): self

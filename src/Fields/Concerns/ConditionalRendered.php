@@ -8,7 +8,7 @@ use Manuskript\Support\Arr;
 
 trait ConditionalRendered
 {
-    protected $shouldRender = [
+    protected array $shouldRender = [
         'index' => false,
         'show' => false,
         'create' => false,
@@ -40,7 +40,7 @@ trait ConditionalRendered
         return $this->updateShouldRender('edit', $boolean);
     }
 
-    protected function updateShouldRender(string $key, bool|callable $value = true): static
+    protected function updateShouldRender(array|string $key, bool|callable $value = true): static
     {
         if (is_array($key)) {
             $this->shouldRender = array_merge($this->shouldRender, $key);

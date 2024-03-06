@@ -8,22 +8,22 @@ use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Manuskript\Database\Collection;
 use Manuskript\Database\Resource;
 
-class Builder
+final class Builder
 {
-    protected string $context = '';
+    private string $context = '';
 
     public function __construct(
         protected EloquentBuilder $query
     ) {}
 
-    public function context($context)
+    public function context($context): self
     {
         $this->context = $context;
 
         return $this;
     }
 
-    public function batch(array $jobs)
+    public function batch(array $jobs): self
     {
         foreach ($jobs as $job) {
             [$callback, $params] = $job;
@@ -36,7 +36,7 @@ class Builder
         return $this;
     }
 
-    public function run(callable $callback, ...$params)
+    public function run(callable $callback, ...$params): self
     {
         if (is_callable($callback)) {
             $callback($this->query, ...$params);
@@ -45,7 +45,7 @@ class Builder
         return $this;
     }
 
-    public function update($id, array $values)
+    public function update($id, array $values): int
     {
         return $this->query->whereKey($id)->update($values);
     }
