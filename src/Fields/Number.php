@@ -51,7 +51,7 @@ class Number extends Field
     {
         if(! is_numeric($number)) {
             throw new InvalidArgumentException(sprintf(
-                '$field must be a numeric type, %s: $s given',
+                '$field must be a numeric type, %s: %s given',
                 gettype($number),
                 (string) $number
             ));
