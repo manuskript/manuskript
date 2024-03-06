@@ -76,11 +76,12 @@ class ResourcesController
     {
         $this->authorize('update', $resource::policy());
 
+        /** @var Resource $item */
         $item = $resource::query()->context('edit')->findOrFail($model);
 
         return Response::make('Resources/Edit')
             ->with('data', $item)
-            ->with('updateUrl', $item->getUrl('resources.update'));
+            ->with('updateUrl', $item->url('resources.update'));
     }
 
     public function update($resource, $model, Request $request)
