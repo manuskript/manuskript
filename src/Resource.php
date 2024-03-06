@@ -5,8 +5,9 @@ namespace Manuskript;
 use Manuskript\Actions\Collection as ActionsCollection;
 use Manuskript\Actions\Destroy;
 use Manuskript\Concerns\RegistersMenu;
-use Manuskript\Concerns\Searchable;
-use Manuskript\Database\Builder;
+use Manuskript\Database\Concerns\Orderable;
+use Manuskript\Database\Concerns\Searchable;
+use Manuskript\Database\Query\Builder;
 use Manuskript\Facades\URL;
 use Manuskript\Fields\Collection as FieldsCollection;
 use Manuskript\Filters\Collection as FiltersCollection;
@@ -19,6 +20,7 @@ use ReflectionClass;
 class Resource
 {
     use RegistersMenu;
+    use Orderable;
     use Searchable;
 
     public static string $model;
@@ -38,13 +40,6 @@ class Resource
     protected static array $perPage = [
         15, 25, 50,
     ];
-
-    public static function orderUsing()
-    {
-        return function ($query, $column, $direction = 'asc') {
-            $query->orderBy($column, $direction);
-        };
-    }
 
     public static function actions(): ActionsCollection
     {
