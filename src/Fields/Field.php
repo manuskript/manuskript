@@ -32,7 +32,7 @@ abstract class Field implements Arrayable, JsonSerializable
 
     protected bool $booted = false;
 
-    public function __construct(
+    final public function __construct(
         protected string $label,
         protected string $name
     ) {
