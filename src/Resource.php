@@ -111,13 +111,6 @@ class Resource
         return new Policy();
     }
 
-    public static function queryWithRelations($context): Builder
-    {
-        $relations = [];
-
-        return static::query()->context($context)->with($relations);
-    }
-
     public static function query(): Builder
     {
         return new Builder(static::$model::query());
