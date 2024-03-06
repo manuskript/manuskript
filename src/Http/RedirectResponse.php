@@ -55,7 +55,7 @@ final class RedirectResponse implements Responsable
         if ($request->header('X-MANUSKRIPT-API')) {
             return new JsonResponse([
                 'message' => $this->message,
-                'errors' => $this->validator->erros() ?? [],
+                'errors' => $this->validator->errors() ?? [],
             ]);
         }
 
