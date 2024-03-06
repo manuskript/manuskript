@@ -1,10 +1,12 @@
 <?php
 
-namespace Manuskript\Database;
+namespace Manuskript\Database\Query;
 
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
+use Manuskript\Database\Collection;
+use Manuskript\Database\Resource;
 
 class Builder
 {
