@@ -1,6 +1,6 @@
 <?php
 
-namespace Manuskript\Concerns;
+namespace Manuskript\Menu\Concerns;
 
 trait RegistersMenu
 {

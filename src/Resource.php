@@ -4,13 +4,13 @@ namespace Manuskript;
 
 use Manuskript\Actions\Collection as ActionsCollection;
 use Manuskript\Actions\Destroy;
-use Manuskript\Concerns\RegistersMenu;
 use Manuskript\Database\Concerns\Orderable;
 use Manuskript\Database\Concerns\Searchable;
 use Manuskript\Database\Query\Builder;
 use Manuskript\Facades\URL;
 use Manuskript\Fields\Collection as FieldsCollection;
 use Manuskript\Filters\Collection as FiltersCollection;
+use Manuskript\Menu\Concerns\RegistersMenu;
 use Manuskript\Pagination\Collection as PaginationCollection;
 use Manuskript\Policies\Policy;
 use Manuskript\Support\Collection;
