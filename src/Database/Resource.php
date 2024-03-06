@@ -28,18 +28,7 @@ class Resource implements Arrayable, JsonSerializable
             ->hydrate($this->model);
     }
 
-    public function url(): string
-    {
-        $route = 'resources.show';
-
-        if(Manuskript::can('update', $this->resource)) {
-            $route = 'resources.edit';
-        }
-
-        return $this->getUrl($route);
-    }
-
-    public function getUrl($route): string
+    public function url($route): string
     {
         return URL::route($route, [
             'resource' => $this->resource::slug(),
@@ -62,12 +51,20 @@ class Resource implements Arrayable, JsonSerializable
         return call_user_func([$this->model, $method], ...$args);
     }
 
+    private function defaultRoute(): string
+    {
+        if(Manuskript::can('update', $this->resource)) {
+            return 'resources.edit';
+        }
+        return 'resources.show';
+    }
+
     public function toArray(): array
     {
         return [
             'key' => $this->model->getKey(),
             'fields' => $this->fields()->values()->toArray(),
-            'url' => $this->url(),
+            'url' => $this->url($this->defaultRoute()),
         ];
     }
 
