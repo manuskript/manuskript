@@ -20,8 +20,8 @@ Layout.Sidebar = forwardRef(({as: Element = "nav", className, ...props}, ref) =>
     />
 ));
 
-Layout.Main = forwardRef(({as: Element = "nav", className, ...props}, ref) => (
-    <Element ref={ref} className={classNames(className, "w-full p-6")} {...props} />
+Layout.Main = forwardRef(({as: Element = "main", className, ...props}, ref) => (
+    <Element ref={ref} className={classNames(className, "p-6")} {...props} />
 ));
 
 Layout.Container = forwardRef(({as: Element = "div", className, ...props}, ref) => (

@@ -38,7 +38,7 @@ export default function App({children}) {
                         ))}
                     </Menu>
                 </Layout.Sidebar>
-                <Layout.Main>{children}</Layout.Main>
+                <Layout.Main className="w-3/4">{children}</Layout.Main>
             </Layout>
         </Fragment>
     );

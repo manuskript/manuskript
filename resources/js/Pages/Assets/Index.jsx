@@ -2,7 +2,7 @@ import {router} from "@inertiajs/react";
 import {Fragment} from "react";
 import App from "~/App";
 import Card from "~/Components/Card";
-import AssetsGrid from "~/Shared/AssetsGrid";
+import AssetsFinder from "~/Shared/AssetsFinder";
 
 const Index = props => {
     function navigate({url}) {
@@ -12,7 +12,7 @@ const Index = props => {
     return (
         <Fragment>
             <Card className="overflow-hidden">
-                <AssetsGrid onClick={navigate} {...props} />
+                <AssetsFinder onClick={navigate} {...props} />
             </Card>
         </Fragment>
     );
