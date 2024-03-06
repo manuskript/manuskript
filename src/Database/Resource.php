@@ -47,6 +47,11 @@ class Resource implements Arrayable, JsonSerializable
         ]);
     }
 
+    public function model(): Model
+    {
+        return $this->model;
+    }
+
     public function __get($name): mixed
     {
         return $this->model->$name;

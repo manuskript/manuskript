@@ -15,6 +15,6 @@ class Destroy extends Action
 
     protected function handle(Resource $resource, Request $request): void
     {
-        $resource->delete();
+        $resource->model()->delete();
     }
 }
