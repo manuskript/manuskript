@@ -2,8 +2,6 @@
 
 namespace Manuskript\Menu;
 
-use Illuminate\Container\Container;
-use Illuminate\Http\Request;
 use InvalidArgumentException;
 use Manuskript\Auth\Guard;
 use Manuskript\Manuskript;

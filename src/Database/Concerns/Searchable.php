@@ -15,7 +15,7 @@ trait Searchable
 
     public static function search($query, $term): void
     {
-        (static::$search ?: fn () => null)($query, $term);
+        (static::$search ?: fn() => null)($query, $term);
     }
 
     public static function searchable(): bool
