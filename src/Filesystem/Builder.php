@@ -5,6 +5,7 @@ namespace Manuskript\Filesystem;
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Contracts\Filesystem\Factory;
 use Illuminate\Contracts\Filesystem\Filesystem;
+use Illuminate\Filesystem\FilesystemAdapter;
 use Manuskript\Exceptions\FileNotFoundHttpException;
 use Manuskript\Support\Str;
 
@@ -39,8 +40,11 @@ class Builder
 
         $allowsPutFileAs = method_exists($this->filesystem, 'putFileAs');
 
+        /** @var FilesystemAdapter $filesystem  */
+        $filesystem = $this->filesystem;
+
         return array_map(
-            fn($file) => $allowsPutFileAs ? $this->filesystem->putFileAs($path, $file, $file->getClientOriginalName()) : $this->filesystem->put($path, $file),
+            fn($file) => $allowsPutFileAs ? $filesystem->putFileAs($path, $file, $file->getClientOriginalName()) : $filesystem->put($path, $file),
             $files,
         );
     }
