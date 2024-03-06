@@ -7,7 +7,7 @@ use Illuminate\Http\JsonResponse;
 use Inertia\Inertia;
 use Symfony\Component\HttpFoundation\Response as HttpResponse;
 
-class Response implements Responsable
+final class Response implements Responsable
 {
     public function __construct(
         protected string $component,

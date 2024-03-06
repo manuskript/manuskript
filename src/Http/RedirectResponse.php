@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\Validator;
 use Manuskript\Facades\URL;
 
-class RedirectResponse implements Responsable
+final class RedirectResponse implements Responsable
 {
     protected ?string $message = null;
 
