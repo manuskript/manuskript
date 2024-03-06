@@ -33,6 +33,18 @@ class Builder
         );
     }
 
+    public function store(?string $path, array $files): array
+    {
+        $path = $this->getValidatedPath($path);
+
+        $allowsPutFileAs = method_exists($this->filesystem, 'putFileAs');
+
+        return array_map(
+            fn($file) => $allowsPutFileAs ? $this->filesystem->putFileAs($path, $file, $file->getClientOriginalName()) : $this->filesystem->put($path, $file),
+            $files,
+        );
+    }
+
     public function directories(?string $path)
     {
         $path = $this->getValidatedPath($path);
