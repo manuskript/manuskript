@@ -29,11 +29,11 @@ class ResourcesController
         );
 
         if ($request->has('q')) {
-            $query->run($resource::searchUsing(), $request->get('q'));
+            $resource::search($query, $request->get('q'));
         }
 
         if ($request->has('sortBy')) {
-            $query->run($resource::orderUsing(), $request->get('sortBy'), $request->get('dir', 'asc'));
+            $resource::order($query, $request->get('sortBy'), $request->get('dir', 'asc'));
         }
 
         $items = $query->simplePaginate($perPage->getCurrent($request))
