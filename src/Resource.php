@@ -81,7 +81,7 @@ class Resource
 
     public static function rootUrl(): string
     {
-        return URL::route('resources.index', static::slug());
+        return URL::route('resources.index', ['resource' => static::slug()]);
     }
 
     public static function slug(): string
