@@ -2,93 +2,54 @@
 
 namespace Manuskript;
 
+use Illuminate\Contracts\Foundation\CachesRoutes;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use Inertia\ServiceProvider as InertiaServiceProvider;
-use Manuskript\Console\Commands;
-use Manuskript\Http\Middleware\Authorize;
-use Manuskript\Http\Middleware\HandleInertiaRequests;
-use Manuskript\Routing\ResourceRouteBinding;
-use Manuskript\Routing\UrlGenerator;
-use Tightenco\Ziggy\ZiggyServiceProvider;
+use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
-class ServiceProvider extends BaseServiceProvider
+class ServiceProvider extends IlluminateServiceProvider
 {
-    private array $commands = [
-        Commands\MakeResourceCommand::class,
-    ];
-
     public function register(): void
     {
         $this->configure();
         $this->registerServices();
     }
 
-    public function boot(): void
-    {
-        $this->registerViews();
-        $this->registerRouteBindings();
-        $this->registerWebRoutes();
-    }
-
-    protected function configure()
+    private function configure(): void
     {
         $this->mergeConfigFrom(
             __DIR__ . '/../config/manuskript.php',
             'manuskript'
         );
-
-        config('ziggy.groups.manuskript', [config('manuskript.path') . '.*']);
     }
 
-    protected function configurePublishing()
+    private function registerServices(): void
     {
-        $this->publishes([
-            __DIR__ . '/../public/' => public_path('vendor/manuskript'),
-        ], 'manuskript-assets');
-
-        if ($this->app->runningInConsole()) {
-
-            $this->commands($this->commands);
-
-            $this->publishes([
-                __DIR__ . '/../config/manuskript.php' => config_path('manuskript.php'),
-            ], 'manuskript-config');
-
-            // $this->publishes([
-            //     __DIR__ . '/../../stubs/provider.stub' => app_path('Providers/ManuskriptServiceProvider.php'),
-            // ], 'manuskript-provider');
+        foreach ([
+            Entries\EntryRepository::class => Entries\Adapters\EloquentEntryRepository::class,
+            Resources\ResourceRepository::class => Resources\Adapter\RuntimeResourceRepository::class,
+        ] as $abstract => $concrete) {
+            $this->app->singleton($abstract, $concrete);
         }
     }
 
-    protected function registerServices()
+    public function boot(): void
     {
-        $this->app->register(InertiaServiceProvider::class);
-        $this->app->register(ZiggyServiceProvider::class);
-
-        $this->app->bind(UrlGenerator::class);
+        $this->registerRoutes();
     }
 
-    protected function registerRouteBindings()
+    private function registerRoutes(): void
     {
-        Route::bind('resource', new ResourceRouteBinding());
-    }
+        Route::bind('resource', Http\Routing\ResourceRouteBinder::class);
 
-    protected function registerViews()
-    {
-        $this->loadViewsFrom(__DIR__ . '/../views', 'manuskript');
-    }
+        if ($this->app instanceof CachesRoutes && $this->app->routesAreCached()) {
+            return;
+        }
 
-    protected function registerWebRoutes()
-    {
         Route::group([
             'prefix' => config('manuskript.path'),
-            'middleware' => array_merge(config('manuskript.middleware'), [
-                Authorize::class,
-                HandleInertiaRequests::class,
-            ]),
+            'middleware' => config('manuskript.middleware', 'web'),
         ], function () {
-            $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+            $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         });
     }
 }

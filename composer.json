@@ -1,6 +1,6 @@
 {
     "name": "manuskript/manuskript",
-    "description": "The Admin Panel for your laravel Application",
+    "description": "Build your admin panel into your Laravel application",
     "keywords": [
         "laravel",
         "admin-panel"
@@ -17,18 +17,6 @@
             "email": "tobias@manuskript.dev"
         }
     ],
-    "require": {
-        "php": "^8.1",
-        "inertiajs/inertia-laravel": "^0.6.9",
-        "tightenco/ziggy": "^1.6"
-    },
-    "require-dev": {
-        "laravel/pint": "^1.10",
-        "spatie/laravel-ignition": "^2.1",
-        "orchestra/testbench": "^8.0",
-        "phpunit/phpunit": "^10.1",
-        "friendsofphp/php-cs-fixer": "^3.51"
-    },
     "autoload": {
         "psr-4": {
             "Manuskript\\": "src/"
@@ -38,6 +26,14 @@
         "psr-4": {
             "Manuskript\\Tests\\": "tests/"
         }
+    },
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0",
+        "phpunit/phpunit": "^10.0",
+        "friendsofphp/php-cs-fixer": "^3.75"
     },
     "extra": {
         "laravel": {
